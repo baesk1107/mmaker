@@ -234,3 +234,19 @@ button.primary:hover { filter: brightness(0.95); }
   pointer-events: none;
   user-select: none;
 }
+
+/* Mobile: stack stage on top, panel at bottom 30% height, scrollable */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70vh 30vh;
+  }
+  .panel {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding: 14px 14px 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .stage { min-height: 0; }
+}
