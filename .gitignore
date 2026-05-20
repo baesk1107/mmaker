@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# OMC tooling
+.omc/
+
+# Editor
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Logs
+*.log

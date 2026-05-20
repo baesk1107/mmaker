@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>M-maker</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app">
+  <main class="stage" id="stage">
+    <div class="frame" id="frame">
+      <svg class="m-svg" id="mSvg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path id="mPath" fill="#111"></path>
+      </svg>
+    </div>
+  </main>
+
+  <aside class="panel">
+    <div class="brand">
+      <h1>M-maker</h1>
+      <span class="muted">parametric</span>
+    </div>
+
+    <section class="group">
+      <label class="ctl">
+        <span class="lbl">W</span>
+        <input id="wSlider" type="range" min="0" max="100" step="0.1" value="50" />
+        <input id="wNum" type="number" min="10" max="800" step="1" value="100" class="num" />
+        <span class="unit">%</span>
+      </label>
+    </section>
+
+    <section class="group bordered" aria-label="shape (reset scope)">
+      <label class="ctl">
+        <span class="lbl">R</span>
+        <input id="rSlider" type="range" min="0" max="200" step="0.5" value="20" />
+        <input id="rNum" type="number" min="0" max="200" step="0.5" value="20" class="num" />
+      </label>
+      <label class="ctl">
+        <span class="lbl">V1</span>
+        <input id="v1Slider" type="range" min="0" max="100" step="1" value="100" />
+        <input id="v1Num" type="number" min="0" max="100" step="1" value="100" class="num" />
+      </label>
+      <label class="ctl">
+        <span class="lbl">V2</span>
+        <input id="v2Slider" type="range" min="0" max="100" step="1" value="50" />
+        <input id="v2Num" type="number" min="0" max="100" step="1" value="50" class="num" />
+      </label>
+      <label class="ctl">
+        <span class="lbl">V3</span>
+        <input id="v3Slider" type="range" min="0" max="100" step="1" value="50" />
+        <input id="v3Num" type="number" min="0" max="100" step="1" value="50" class="num" />
+      </label>
+      <label class="ctl">
+        <span class="lbl">V1↕</span>
+        <input id="s1Slider" type="range" min="0" max="100" step="1" value="0" />
+        <input id="s1Num" type="number" min="0" max="100" step="1" value="0" class="num" />
+      </label>
+      <label class="ctl">
+        <span class="lbl">V2↕</span>
+        <input id="s2Slider" type="range" min="0" max="100" step="1" value="0" />
+        <input id="s2Num" type="number" min="0" max="100" step="1" value="0" class="num" />
+      </label>
+      <label class="ctl">
+        <span class="lbl">V3↕</span>
+        <input id="s3Slider" type="range" min="0" max="100" step="1" value="0" />
+        <input id="s3Num" type="number" min="0" max="100" step="1" value="0" class="num" />
+      </label>
+      <button id="reset" class="ghost reset-shape">reset shape</button>
+    </section>
+
+    <section class="group">
+      <label class="ctl">
+        <span class="lbl">FG</span>
+        <input id="fgPicker" type="color" value="#111111" />
+      </label>
+      <label class="ctl">
+        <span class="lbl">BG</span>
+        <input id="bgPicker" type="color" value="#ffffff" />
+      </label>
+    </section>
+
+    <section class="group ai-section">
+      <h2 class="group-title">AI texture</h2>
+      <textarea id="aiPrompt" class="ai-prompt" rows="2"
+                placeholder="e.g., glossy dark chocolate with swirls"></textarea>
+      <div class="flavor-presets" id="flavorPresets">
+        <button type="button" data-flavor="glossy dark chocolate with swirls">초콜릿</button>
+        <button type="button" data-flavor="vanilla cream, soft pastel">바닐라</button>
+        <button type="button" data-flavor="fresh strawberry, juicy red">딸기</button>
+        <button type="button" data-flavor="cool mint, light green, fresh">민트</button>
+        <button type="button" data-flavor="rich caramel, golden brown, shiny">카라멜</button>
+        <button type="button" data-flavor="matcha green tea, powder">말차</button>
+      </div>
+      <button id="generateBtn" class="ghost ai-gen" disabled>generate (coming soon)</button>
+    </section>
+
+    <div class="ratio-readout" id="ratioOut">— × —</div>
+
+    <section class="actions single">
+      <button id="exportPng" class="primary">export PNG</button>
+    </section>
+  </aside>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
