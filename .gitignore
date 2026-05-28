@@ -13,3 +13,22 @@
 
 # Logs
 *.log
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Debug artifacts
+.debug/
+
+# Env
+.env
+.env.local
+.env*.local
+
+# Legacy static prototype
+index.html
+styles.css
+js/
