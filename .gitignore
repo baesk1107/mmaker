@@ -25,7 +25,6 @@ out/
 
 # Env
 .env
-.env.local
 .env*.local
 
 # Legacy static prototype
